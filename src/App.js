@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import {Route, Switch} from 'react-router-dom';
+import MyNav from './Nav';
+import Dashboard from './Dashboard';
+import Goals from './Goals';
+import AddGoal from './AddGoal'
+import Goal from './Goal';
+import Tasks from './Task';
+import Task from './Task';
+import AddTask from './AddTask';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MyNav />
+      <Switch>
+        <Route exact path = '/' component={Dashboard} />
+        <Route path = '/goals' component={Goals} />
+        <Route path = '/goal/:goalId' component={Goal} />
+        <Route path = '/add-goal' component={AddGoal} />
+        <Route path = '/tasks' component={Tasks} />
+        <Route path = './task/:taskId' component={Task} />
+        <Route path = './add-task' component={AddTask} />
+      </Switch>
     </div>
   );
 }

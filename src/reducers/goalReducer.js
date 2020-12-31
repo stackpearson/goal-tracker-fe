@@ -11,6 +11,18 @@ export const initialState = {
                     taskComplete: false
                 }
             ]
+        },
+        {
+            goalId: 2,
+            goalName: 'Test Goal 2',
+            goalCategory: ['test category 2'],
+            goalTasks: [
+                {
+                    taskId: 2,
+                    taskName: 'Test Task 2',
+                    taskComplete: false
+                }
+            ]
         }
     ]
 }
