@@ -1,4 +1,3 @@
-import './App.css';
 import {Route, Switch} from 'react-router-dom';
 import MyNav from './Nav';
 import Dashboard from './Dashboard';
