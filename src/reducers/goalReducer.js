@@ -7,6 +7,21 @@ export const initialState = {
             goalTasks: [
                 {
                     taskId: 1,
+                    goalId: 1,
+                    taskName: 'Test Task',
+                    taskComplete: true
+                },
+
+                {
+                    taskId: 2,
+                    goalId: 1,
+                    taskName: 'Test Task',
+                    taskComplete: true
+                },
+
+                {
+                    taskId: 3,
+                    goalId: 1,
                     taskName: 'Test Task',
                     taskComplete: false
                 }
@@ -18,8 +33,9 @@ export const initialState = {
             goalCategory: ['test category 2'],
             goalTasks: [
                 {
-                    taskId: 2,
-                    taskName: 'Test Task 2',
+                    taskId: 4,
+                    goalId: 2,
+                    taskName: 'Test Task',
                     taskComplete: false
                 }
             ]

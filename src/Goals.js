@@ -1,7 +1,27 @@
-const Goals = () => {
+import { connect } from "react-redux"
+import Goal from './Goal';
+
+const Goals = (props) => {
     return(
-        <div>Goals here</div>
+        <div>
+            {props.goalsOnProps.goals.map(goal => {
+                return (
+                    <Goal key={goal.goalId} data={goal} />
+                )
+                
+            })}
+        </div>
     )
 }
 
-export default Goals
+const mapStateToProps = state => {
+    return {
+        goalsOnProps: state.goalReducer
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    {}
+)(Goals)
+
