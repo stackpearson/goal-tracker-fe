@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react'
+import Task from './Task'
 
 const Goal = (props) => {
 
@@ -10,19 +11,30 @@ const Goal = (props) => {
             
             if (task.taskComplete === true) {
                 count += 1
-                console.log(count)
             }
-            setProgress(count)
+            
         })
+        setProgress(count)
     }, [props.data])
 
-    return(
+    return(<>
         <div className='goal__container'>
-            <h2>{props.data.goalName}</h2>
-            <h2>Category: {props.data.goalCategory}</h2>
-            <h2>Status: {progress}/{props.data.goalTasks.length}</h2>
+            <div>
+                <h2>{props.data.goalName}</h2>
+                <h2>Category: {props.data.goalCategory}</h2>
+                <h2>Status: {progress}/{props.data.goalTasks.length}</h2>
+            </div>
+            
+            <div className='tasks__container'>
+                {props.data.goalTasks.map(task => {
+                    return (
+                            <Task key={'taskId-' + task.taskId + '-onGoal'} data={task} />
+                    )
+                    
+                })}
+            </div>
         </div>
-    )
+    </>)
 }
 
 export default Goal
