@@ -6,7 +6,7 @@ const Goals = (props) => {
         <div>
             {props.goalsOnProps.goals.map(goal => {
                 return (
-                    <Goal key={goal.goalId} data={goal} />
+                    <Goal key={'goalId-' + goal.goalId} data={goal} />
                 )
                 
             })}
